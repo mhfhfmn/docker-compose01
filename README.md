@@ -179,3 +179,15 @@ services:
 
 ### Решение
 
+![Создание файлов и запуск контейнеров](https://github.com/mhfhfmn/docker-compose01/blob/main/img/task_5.1.jpg)
+
+Выполнился файл `compose.yaml`, так как при наличии 2 файлов стандартного именования Docker отдает предпочтение именно ему, второй файл `docker-compose.yaml` старого формата именования.
+Что бы отработались оба файла необходимо в файл `compose.yaml` добавить секцию `include` с указанием на второй файл:
+
+[compose.yaml](https://github.com/mhfhfmn/docker-compose01/blob/main/files/compose.yaml)
+[docker-compose.yaml](https://github.com/mhfhfmn/docker-compose01/blob/main/files/docker-compose.yaml)
+
+![push образа в registry](https://github.com/mhfhfmn/docker-compose01/blob/main/img/task_5.2.jpg)
+![portainer](https://github.com/mhfhfmn/docker-compose01/blob/main/img/task_5.2.portainer.jpg)
+![Warning and down](https://github.com/mhfhfmn/docker-compose01/blob/main/img/task_5.3.jpg)
+Суть предупреждения на скриншоте выше в том, что он docker compose обнаружил запущенные контейнеры которые не описаны в манифесте, условно контейнер есть, а его описание отсутствует в текущих yaml файлах.
